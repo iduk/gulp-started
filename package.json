@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/iduk/gulp-started/issues"
   },
-  "homepage": "https://github.com/iduk/gulp-started#readme"
+  "homepage": "https://github.com/iduk/gulp-started#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
