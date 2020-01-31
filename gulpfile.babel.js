@@ -1,5 +1,6 @@
 import gulp from "gulp";
 import gulpPug from "gulp-pug";
+import del from "del";
 
 const routes = {
   pug: {
@@ -15,4 +16,6 @@ export const pug = () =>
       .pipe(gulp.dest(routes.pug.dest));
 
       
-export const dev = gulp.series([pug]);
+export const clean = () => del(["build"]);
+
+export const dev = gulp.series([clean, pug]);
