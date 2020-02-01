@@ -18,8 +18,17 @@
 		"gulp": "^4.0.2"
 	},
 	"devDependencies": {
+		"babelify": "^10.0.0",
 		"del": "^5.1.0",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-bro": "^2.0.0",
+		"gulp-csso": "^4.0.1",
+		"gulp-image": "^6.0.0",
 		"gulp-pug": "^4.0.1",
-		"gulp-webserver": "^0.9.1"
+		"gulp-sass": "^4.0.2",
+		"gulp-watch": "^5.0.1",
+		"gulp-webserver": "^0.9.1",
+		"node-sass": "^4.13.1",
+		"uglifyify": "^5.0.2"
 	}
 }
