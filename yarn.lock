@@ -3371,13 +3371,6 @@ gift@^0.10.2:
     flex-exec "^1.0.0"
     underscore "^1.8.3"
 
-gift@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/gift/-/gift-0.6.1.tgz#c1698e6b6887164ed978a01095423cff65b8e79f"
-  integrity sha1-wWmOa2iHFk7ZeKAQlUI8/2W4558=
-  dependencies:
-    underscore "1.x.x"
-
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -3656,18 +3649,6 @@ gulp-gh-pages-with-updated-gift@^0.5.4:
     gulp-util "^3.0.7"
     readable-stream "^2.0.4"
     rimraf "^2.4.4"
-    vinyl-fs "^2.2.1"
-    wrap-promise "^1.0.1"
-
-gulp-gh-pages@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/gulp-gh-pages/-/gulp-gh-pages-0.5.4.tgz#a6732ca475ab9b5a53253c1c24734c40c21b6546"
-  integrity sha1-pnMspHWrm1pTJTwcJHNMQMIbZUY=
-  dependencies:
-    gift "^0.6.1"
-    gulp-util "^3.0.7"
-    readable-stream "^2.0.2"
-    rimraf "^2.4.3"
     vinyl-fs "^2.2.1"
     wrap-promise "^1.0.1"
 
@@ -6631,7 +6612,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.4.3, rimraf@^2.4.4, rimraf@^2.5.4:
+rimraf@2, rimraf@^2.4.4, rimraf@^2.5.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
   integrity sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
@@ -7638,7 +7619,7 @@ undeclared-identifiers@^1.1.2:
     simple-concat "^1.0.0"
     xtend "^4.0.1"
 
-underscore@1.x.x, underscore@^1.8.3:
+underscore@^1.8.3:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.2.tgz#0c8d6f536d6f378a5af264a72f7bec50feb7cf2f"
   integrity sha512-D39qtimx0c1fI3ya1Lnhk3E9nONswSKhnffBI0gME9C99fYOkNi04xs8K6pePLhvl1frbDemkaBQ5ikWllR2HQ==

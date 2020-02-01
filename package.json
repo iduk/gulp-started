@@ -16,8 +16,7 @@
 		"@babel/core": "^7.4.5",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/register": "^7.4.4",
-		"gulp": "^4.0.2",
-		"gulp-gh-pages": "^0.5.4"
+		"gulp": "^4.0.2"
 	},
 	"devDependencies": {
 		"babelify": "^10.0.0",
