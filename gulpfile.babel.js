@@ -8,8 +8,11 @@ import autoPrefixer from "gulp-autoprefixer";
 import minCss from "gulp-csso";
 import bro from "gulp-bro";
 import babelify from "babelify";
+import ghPages from "gulp-gh-pages-with-updated-gift";
+
 
 sass.compiler = require("node-sass");
+
 
 const routes = {
 	pug: {
@@ -40,7 +43,7 @@ const pug = () =>
 		.pipe(gpug())
 		.pipe(gulp.dest(routes.pug.dest));
       
-const clean = () => del(["build/"]);
+const clean = () => del(["build/", ".publish"]);
 const webserver = () =>
 	gulp
 		.src('build')
@@ -70,12 +73,15 @@ const js = () => gulp.src(routes.js.src)
 	.pipe(
 		bro({
 			transform:
-				[babelify.configure({ presets: ["@babel/preset-env"] }),
+				[babelify.configure({ presets: ["@babel/preset-env"] }), // react 사용시, 프리셋 추가
 				["uglifyify", { global: true }]
 				]
 		})
 	)
 	.pipe(gulp.dest(routes.js.dest));
+
+// Git 배포
+const gh = () => gulp.src("build/**/*").pipe(ghPages());
 
 const watch = () => {
 	gulp.watch(routes.pug.watch, pug);
@@ -86,8 +92,10 @@ const watch = () => {
 
 
 // 할일 정돈하기
-const prepare = gulp.series([clean]);
+const cleaning = gulp.series([clean]);
 const assets = gulp.series([pug, img, styles, js]);
-const postDev = gulp.parallel([webserver, watch]); // task를 여러개 병행 할 땐 'parallel'
+const live = gulp.parallel([webserver, watch]); // task를 여러개 병행 할 땐 'parallel'
 
-export const dev = gulp.series([prepare, assets, postDev]);
+export const build = gulp.series([cleaning, assets]);
+export const dev = gulp.series([build, live]);
+export const deploy = gulp.series([build, gh, cleaning]);

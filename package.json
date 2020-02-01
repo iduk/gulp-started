@@ -9,13 +9,15 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "gulp dev",
-		"build": "gulp build"
+		"build": "gulp build",
+		"deploy": "gulp deploy"
 	},
 	"dependencies": {
 		"@babel/core": "^7.4.5",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/register": "^7.4.4",
-		"gulp": "^4.0.2"
+		"gulp": "^4.0.2",
+		"gulp-gh-pages": "^0.5.4"
 	},
 	"devDependencies": {
 		"babelify": "^10.0.0",
@@ -23,6 +25,7 @@
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-bro": "^2.0.0",
 		"gulp-csso": "^4.0.1",
+		"gulp-gh-pages-with-updated-gift": "^0.5.4",
 		"gulp-image": "^6.0.0",
 		"gulp-pug": "^4.0.1",
 		"gulp-sass": "^4.0.2",
