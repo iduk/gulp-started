@@ -36,19 +36,23 @@ const routes = {
 	}
 };
 
-// 
+// Pug Compile
 const pug = () =>
 	gulp
 		.src(routes.pug.src)
 		.pipe(gpug())
 		.pipe(gulp.dest(routes.pug.dest));
-      
+
+// Clean 
 const clean = () => del(["build/", ".publish"]);
+
+// Server
 const webserver = () =>
 	gulp
 		.src('build')
 		.pipe(ws({ livereload: true, open: true }));
 
+// Images
 const img = () =>
 	gulp
 		.src(routes.img.src)
@@ -57,6 +61,7 @@ const img = () =>
 		}))
 		.pipe(gulp.dest(routes.img.dest));
 
+// Scss, Css
 const styles = () =>
 	gulp
 		.src(routes.scss.src)
@@ -69,6 +74,7 @@ const styles = () =>
 		.pipe(minCss())
 		.pipe(gulp.dest(routes.scss.dest));
 
+// Js
 const js = () => gulp.src(routes.js.src)
 	.pipe(
 		bro({
@@ -83,6 +89,7 @@ const js = () => gulp.src(routes.js.src)
 // Git 배포
 const gh = () => gulp.src("build/**/*").pipe(ghPages());
 
+// Watch
 const watch = () => {
 	gulp.watch(routes.pug.watch, pug);
 	gulp.watch(routes.img.src, img);
@@ -91,11 +98,11 @@ const watch = () => {
 };
 
 
-// 할일 정돈하기
+// Task Groups
 const cleaning = gulp.series([clean]);
 const assets = gulp.series([pug, img, styles, js]);
 const live = gulp.parallel([webserver, watch]); // task를 여러개 병행 할 땐 'parallel'
-
+// Export
 export const build = gulp.series([cleaning, assets]);
 export const dev = gulp.series([build, live]);
 export const deploy = gulp.series([build, gh, cleaning]);
