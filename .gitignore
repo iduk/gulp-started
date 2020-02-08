@@ -35,7 +35,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+build
 
 # Dependency directories
 node_modules/
@@ -67,6 +67,7 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+yarn.lock
 
 # dotenv environment variables file
 .env
@@ -83,7 +84,7 @@ typings/
 dist
 
 # Gatsby files
-.cache/
+.cache
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
@@ -102,3 +103,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# vscode
+.vscode
